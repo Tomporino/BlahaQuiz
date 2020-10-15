@@ -8,6 +8,8 @@ if (startButton != null){startButton.addEventListener("click", function(){
     console.log("here")
     window.location.href = "http://localhost:8080/quiz";
 })}
+let countOfRightAnswers = 0;
+let countOfQuestions = 0;
 
 
 for (let answer of ANSWERBOX){
@@ -27,6 +29,12 @@ function refresh() {
             i++;
         }
     })
+    if (countOfQuestions === 5){
+        alert("Right answers: " + countOfRightAnswers);
+        countOfQuestions = 0;
+        countOfRightAnswers = 0;
+    }
+    ++countOfQuestions;
 }
 
 function resetColor() {
@@ -41,6 +49,8 @@ function answerListener(event) {
     sleep(2000).then(() => {
         if (event.target.getAttribute("data-right") === "true"){
             event.target.setAttribute("style", "background-color:green");
+            countOfRightAnswers++;
+            console.log(countOfRightAnswers)
         } else {
             event.target.setAttribute("style", "background-color:red");
             for (let answer of ANSWERBOX){
