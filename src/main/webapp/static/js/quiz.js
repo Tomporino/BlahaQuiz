@@ -4,10 +4,9 @@ let QUESTIONBOX = document.querySelector("#question");
 let ANSWERBOX = document.querySelectorAll(".answers");
 
 
-
-
 function refresh() {
     getRandomQuestionWithAnswers(function (question){
+        resetColor();
         QUESTIONBOX.innerHTML = question.question;
     }, function (answers){
         let i = 0;
@@ -17,13 +16,19 @@ function refresh() {
             answer.addEventListener('click' ,event => {answerListener(event);});
             i++;
         }
-
     })
+}
+
+function resetColor() {
+    for (let answer of ANSWERBOX){
+        answer.setAttribute("style", "background-color:yellow");
+    }
+
 }
 
 function answerListener(event) {
     event.target.setAttribute("style", "background-color:orange");
-    setTimeout(() => {
+    sleep(2000).then(() => {
         if (event.target.getAttribute("data-right") === "true"){
             event.target.setAttribute("style", "background-color:green");
         } else {
@@ -34,12 +39,13 @@ function answerListener(event) {
                 }
             }
         }
-    }, 2000);
-    
+    });
 }
 
-// function sleep(ms) {
-//     return new Promise(resolve => setTimeout(resolve, ms));
-// }
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+//
 
 refresh();
