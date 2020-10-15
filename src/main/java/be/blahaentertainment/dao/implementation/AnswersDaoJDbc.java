@@ -25,7 +25,7 @@ public class AnswersDaoJDbc implements AnswersDao {
             jsonBuilder.append(answer.get(0));
             jsonBuilder.append("\"");
             jsonBuilder.append(",");
-            jsonBuilder.append("{\"questionId\":");
+            jsonBuilder.append("\"questionId\":");
             jsonBuilder.append("\"");
             jsonBuilder.append(answer.get(1));
             jsonBuilder.append("\"");
@@ -34,7 +34,9 @@ public class AnswersDaoJDbc implements AnswersDao {
             jsonBuilder.append(answer.get(2));
             jsonBuilder.append(",");
             jsonBuilder.append("\"answer\":");
+            jsonBuilder.append("\"");
             jsonBuilder.append(answer.get(3));
+            jsonBuilder.append("\"");
             jsonBuilder.append("},");
         }
         jsonBuilder.append("]");
