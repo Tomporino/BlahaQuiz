@@ -17,11 +17,7 @@ public class GetQuestionAPI extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            questionsDao = new QuestionsDaoJDbc();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        questionsDao = new QuestionsDaoJDbc();
         String jsonString = questionsDao.selectRandomQuestion();
         System.out.println(jsonString);
         resp.setContentType("text/html");
