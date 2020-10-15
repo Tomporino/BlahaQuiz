@@ -2,6 +2,12 @@ import {getRandomQuestionWithAnswers} from "./main.js";
 
 let QUESTIONBOX = document.querySelector("#question");
 let ANSWERBOX = document.querySelectorAll(".answers");
+let startButton = document.querySelector('#startButton');
+
+if (startButton != null){startButton.addEventListener("click", function(){
+    console.log("here")
+    window.location.href = "http://localhost:8080/quiz";
+})}
 
 
 for (let answer of ANSWERBOX){
