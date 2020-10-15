@@ -11,7 +11,10 @@ export function getRandomQuestionWithAnswers(callback1,callback2){
             callback1(data)
             fetch(`/answers?questionId=${data.questionId}`)
                 .then((response) => response.json())
-                .then((data)=> callback2(data))
+                .then((data)=> {
+                    console.log("before: "+data)
+                    callback2(data)
+                })
         })
 }
 
