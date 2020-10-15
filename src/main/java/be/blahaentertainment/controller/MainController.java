@@ -19,7 +19,7 @@ public class MainController extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         TemplateEngine engine = TemplateEngineUtil.getTemplateEngine(req.getServletContext());
         WebContext context = new WebContext(req, resp, req.getServletContext());
-        engine.process("home.html", context, resp.getWriter());
+        engine.process("quiz.html", context, resp.getWriter());
     }
 
 
