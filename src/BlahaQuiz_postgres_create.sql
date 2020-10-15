@@ -11,7 +11,7 @@ CREATE TABLE "question" (
 
 CREATE TABLE "answer" (
 	"id" serial NOT NULL,
-	"question_Id" int NOT NULL,
+	"question_id" int NOT NULL,
 	"right_answer" BOOLEAN NOT NULL,
 	"answer" varchar(255) NOT NULL,
 	CONSTRAINT "answer_pk" PRIMARY KEY ("id")
