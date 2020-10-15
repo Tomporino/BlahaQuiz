@@ -5,6 +5,11 @@ let ANSWERBOX = document.querySelectorAll(".answer");
 
 
 
+function game() {
+
+
+}
+
 function refresh() {
     getRandomQuestionWithAnswers(function (question){
         QUESTIONBOX.innerHTML = question.question;
