@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet(urlPatterns = "/question")
 public class GetQuestionAPI extends HttpServlet {
@@ -16,7 +17,11 @@ public class GetQuestionAPI extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        questionsDao = new QuestionsDaoJDbc();
+        try {
+            questionsDao = new QuestionsDaoJDbc();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         String jsonString = questionsDao.selectRandomQuestion();
         resp.setContentType("text/html");
         resp.getWriter().println(jsonString);
