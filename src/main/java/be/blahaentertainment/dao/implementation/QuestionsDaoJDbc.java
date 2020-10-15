@@ -9,7 +9,7 @@ import java.sql.*;
 public class QuestionsDaoJDbc implements QuestionsDao {
     private final DataSource dataSource;
 
-    public QuestionsDaoJDbc() throws SQLException{
+    public QuestionsDaoJDbc() {
         this.dataSource = DatabaseManager.getDataSource();
     }
 
