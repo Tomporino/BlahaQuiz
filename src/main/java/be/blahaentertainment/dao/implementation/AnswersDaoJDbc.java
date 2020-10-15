@@ -1,6 +1,7 @@
 package be.blahaentertainment.dao.implementation;
 
 import be.blahaentertainment.dao.AnswersDao;
+import be.blahaentertainment.dao.DatabaseManager;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -9,10 +10,10 @@ import java.util.List;
 import java.util.Set;
 
 public class AnswersDaoJDbc implements AnswersDao {
-    DataSource dataSource;
+    private final DataSource dataSource;
 
-    public AnswersDaoJDbc(DataSource dataSource) {
-        this.dataSource = dataSource;
+    public AnswersDaoJDbc() {
+        this.dataSource = DatabaseManager.getDataSource();
     }
 
     public String answersToJson(Set<List<String>> answers){

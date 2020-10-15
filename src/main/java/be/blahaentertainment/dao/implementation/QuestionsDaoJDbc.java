@@ -1,15 +1,16 @@
 package be.blahaentertainment.dao.implementation;
 
+import be.blahaentertainment.dao.DatabaseManager;
 import be.blahaentertainment.dao.QuestionsDao;
 
 import javax.sql.DataSource;
 import java.sql.*;
 
 public class QuestionsDaoJDbc implements QuestionsDao {
-    DataSource dataSource;
+    private final DataSource dataSource;
 
-    public QuestionsDaoJDbc(DataSource dataSource) throws SQLException{
-        this.dataSource = dataSource;
+    public QuestionsDaoJDbc() throws SQLException{
+        this.dataSource = DatabaseManager.getDataSource();
     }
 
     public String createJson(int questionId, String question, String hint){
