@@ -21,10 +21,12 @@ public class QuestionsDaoJDbc implements QuestionsDao {
             jsonBuilder.append("\"");
             jsonBuilder.append(",");
             jsonBuilder.append("\"question\":");
+            jsonBuilder.append("\"");
             jsonBuilder.append(question);
-            jsonBuilder.append(",");
-            jsonBuilder.append("\"hint\":");
-            jsonBuilder.append(hint);
+            jsonBuilder.append("\"");
+            //jsonBuilder.append(",");
+            //jsonBuilder.append("\"hint\":");
+            //jsonBuilder.append(hint);
             jsonBuilder.append("}");
 
         return jsonBuilder.toString();
