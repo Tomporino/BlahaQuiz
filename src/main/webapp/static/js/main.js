@@ -7,7 +7,6 @@ export function getRandomQuestionWithAnswers(callback1,callback2){
     fetch("/question")
         .then((response) => response.json())
         .then((question) => {
-            console.log("id: "+question.questionId);
             callback1(question)
             fetch(`/answers?questionId=${question.questionId}`)
                 .then((response) => response.json())

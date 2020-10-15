@@ -14,11 +14,32 @@ function refresh() {
         for (let answer of ANSWERBOX){
             answer.innerHTML = answers[i].answer;
             answer.setAttribute("data-right", answers[i].rightAnswer)
-            answer.addEventListener('click' ,e => console.log(answer));
+            answer.addEventListener('click' ,event => {answerListener(event);});
             i++;
         }
 
     })
 }
+
+function answerListener(event) {
+    event.target.setAttribute("style", "background-color:orange");
+    setTimeout(() => {
+        if (event.target.getAttribute("data-right") === "true"){
+            event.target.setAttribute("style", "background-color:green");
+        } else {
+            event.target.setAttribute("style", "background-color:red");
+            for (let answer of ANSWERBOX){
+                if (answer.getAttribute("data-right") === "true"){
+                    answer.setAttribute("style", "background-color:green");
+                }
+            }
+        }
+    }, 2000);
+    
+}
+
+// function sleep(ms) {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+// }
 
 refresh();
