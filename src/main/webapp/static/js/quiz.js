@@ -4,6 +4,11 @@ let QUESTIONBOX = document.querySelector("#question");
 let ANSWERBOX = document.querySelectorAll(".answers");
 
 
+for (let answer of ANSWERBOX){
+    answer.addEventListener('click' ,event => {answerListener(event);});
+}
+
+
 function refresh() {
     getRandomQuestionWithAnswers(function (question){
         resetColor();
@@ -13,7 +18,6 @@ function refresh() {
         for (let answer of ANSWERBOX){
             answer.innerHTML = answers[i].answer;
             answer.setAttribute("data-right", answers[i].rightAnswer)
-            answer.addEventListener('click' ,event => {answerListener(event);});
             i++;
         }
     })
@@ -39,7 +43,7 @@ function answerListener(event) {
                 }
             }
         }
-    });
+    }).then(() => sleep(2000).then(()=>refresh()));
 }
 
 function sleep(ms) {
