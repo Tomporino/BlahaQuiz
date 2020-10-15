@@ -23,6 +23,7 @@ public class GetQuestionAPI extends HttpServlet {
             throwables.printStackTrace();
         }
         String jsonString = questionsDao.selectRandomQuestion();
+        System.out.println(jsonString);
         resp.setContentType("text/html");
         resp.getWriter().println(jsonString);
     }
