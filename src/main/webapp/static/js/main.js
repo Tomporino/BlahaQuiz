@@ -1,22 +1,17 @@
-let currentQuestionId = 1;
-
-export function getAnswersForQuestion (data, callback){
-    fetch(`/answers?questionId=${currentQuestionId}`)
-        .then((response) => response.json())
-        .then((data)=> callback(data))
-
-
-}
+let currentQuestionId;
 
 //it calls a fetch to get a random question, and returns with data
 //which is a Json containing the question,questionId,hint
-export function getRandomQuestion(callback){
+export function getRandomQuestionWithAnswers(callback1,callback2){
 
     fetch("/question")
         .then((response) => response.json())
         .then((data) => {
-            currentQuestionId = parseInt(data.questionId);
-            callback(data)
+            console.log("id: "+data.questionId);
+            callback1(data)
+            fetch(`/answers?questionId=${data.questionId}`)
+                .then((response) => response.json())
+                .then((data)=> callback2(data))
         })
 }
 
