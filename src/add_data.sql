@@ -118,41 +118,11 @@ INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFA
 INSERT INTO public.question (id, question, hint) VALUES (35, 'What is autoboxing and unboxing?', '');
 INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 35, true, 'Autoboxing is the automatic conversion that JVC makes between a primitive type and its corresponding object wrapper class. Unboxing is the opposite, we convert the object wrapper class (value) back to its primitive type.');
 
-INSERT INTO public.question (id, question, hint) VALUES (36, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 36, true, '');
+INSERT INTO public.question (id, question, hint) VALUES (36, 'If you have a variable, that shall store a positive whole number between 0 and 200, what primitive type would you use to store it?', '');
+INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 36, true, 'In a short (it stores data between -215 and 215).');
 
-INSERT INTO public.question (id, question, hint) VALUES (37, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 37, true, '');
+INSERT INTO public.question (id, question, hint) VALUES (37, 'What is the "golden rule" of variable scoping in Java? What is the lifetime of variables?', '');
+INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 37, true, '"Variables declared inside a function only exist inside that function."');
 
-INSERT INTO public.question (id, question, hint) VALUES (38, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 38, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (39, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 39, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (40, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 40, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (41, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 41, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (42, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 42, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (43, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 43, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (44, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 44, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (45, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 45, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (46, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 46, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (47, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 47, true, '');
-
-INSERT INTO public.question (id, question, hint) VALUES (48, '', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 48, true, '');
+INSERT INTO public.question (id, question, hint) VALUES (38, 'What is the purpose of the ‘equals()’ method?', '');
+INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 38, true, 'We can compare methods (objects) by their content type, so we can compare for example the value of the attributes of two instance.');
