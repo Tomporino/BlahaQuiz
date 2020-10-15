@@ -54,8 +54,9 @@ public class AnswersDaoJDbc implements AnswersDao {
             ResultSet rs = st.executeQuery();
             Set<List<String>>answers = new HashSet<>();
             while (rs.next()){
+                String answer = rs.getString(4).replaceAll("\"", "").replaceAll("`", "").replaceAll("\\r?\\n", "");
                 answers.add(List.of(String.valueOf(rs.getInt(1)), String.valueOf(rs.getInt(2)),
-                        String.valueOf(rs.getBoolean(3)), rs.getString(4)));
+                        String.valueOf(rs.getBoolean(3)), answer));
             }
             return answersToJson(answers);
         }catch (SQLException e){
