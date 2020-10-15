@@ -41,89 +41,246 @@
 --
 -- INSERT INTO public.question (id, question, hint) VALUES (14, 'Do we require parameter for constructors?', '');
 -- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 14, true, 'It`s only optional.');
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (15, 'What is an interface?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 15, true, 'They are a group of related methods without body.
+-- 	It contains what methods has the class to implement.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (16, 'What are access modifiers?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 16, true, 'They are specifies the scope/accessibility of a field, methods or class.
+-- 	(Private, Default (within the package), Protected, Public)');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (17, 'Can a static method use non-static members?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 17, true, 'No, because non-static members need to be initialized before usage, and as static methods are initialized during compile time and non-static methods are initialized during runtime, static methods can''t access non-static methods or fields.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (18, 'What is the difference between hiding a static method and overriding an instance method?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 18, true, '- Hiding a static method happens at compile time and Overriding occurs at runtime.
+-- 	- Overriding is how Java achieve runtime-polymorphism');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (19, 'Could we access a static variable (or method) from a non-static method? Why?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 19, true, 'Yes we can, because as non-static methods not fixed in the ram, statics do, so you can access static methods and fields since they are initialized at compile time.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (20, 'Could we access a non-static variable (or method) from a static method? Why?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 20, true, 'No, because non-static members need to be initialized before usage, and as static methods are initialized during compile time and non-static methods are initialized during runtime, static methods can''t access non-static methods or fields.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (21, 'How many instances you have of a static variable of a given class?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 21, true, 'None, it''s just a reference pointing to the original one created at compile while instances created at runtime.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (22, 'Why is it not a good practice to write a lot of static methods?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 22, true, 'Because that''s not to oop.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (23, 'What are the features of static attributes and static methods of a class? What are the benefits, when to use them?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 23, true, 'It''s used for constants that are the same for every instances of a class. (memory management)
+-- 	They can be accessed from anywhere without creating an instance of the class.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (24, 'What is the ‘this’ reference?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 24, true, 'It''s a reference of the object in an instance (Class).');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (25, 'What are base class, subclass and superclass?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 25, true, '- Base Class: It`s a class from other classes are derived.
+-- 	- Subclass: Subclass is a child class which inherits from an other class.
+-- 	- Superclass: It`s the parent class subclasses inherits from.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (26, 'Difference between overloading and overriding?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 26, true, 'Overloading is when 2 methods have the same name but different parameters (number or type).
+-- 	Overriding is when 2 methods have the same name and parameters, but one of the methods in the child class and the other is in the parent class.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (27, 'What are the Object Oriented Principles? Explain the concepts with realistic examples!', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 27, true, 'Encapsulation, Abstraction, Inheritance, Polymorphism');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (28, 'What is method overloading?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 28, true, 'Overloading is when 2 methods have the same name but different parameters (number or type).');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (29, 'What is method overriding?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 29, true, 'Overriding is when 2 methods have the same name and parameters, but one of the methods in the child class and the other is in the parent class.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (30, 'Explain how object oriented languages attempt to simplify memory management for Programmers.', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 30, true, 'With encapsulation we can reuse codes so we won''t have code duplications so as with inheritance.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (31, 'Explain the “Single Responsibility” principle!', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 31, true, 'Every module, class and method should have responsibility over a single part of the program`s functionality.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (32, 'What is an object oriented program? Explain, show.', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 32, true, 'An OOP program is written using the 4 pillars of the OOP.
+-- 	Like if we want to simulate a zoo. We have the Zoo witch had numerous methods and variables, we have employees parent class wich will be inherited by subclasses, so as for animals.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (33, 'How do you make a class immutable? What do you need to watch out for?', '');
+-- INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 33, true, 'In Java we create immutable content with the "final" keyword.
+-- 	- Childs cannot be created from a final class.
+-- 	- Data members must be declared final.
+-- 	- Construct with parameters.
+-- 	- Getters for all the variables in it and no Setters.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (34, 'How many instances can be created for an abstract class?', '');
+-- INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 34, true, 'None. You can only extend abstract classes implement their methods and then you can create instance from the child class.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (35, 'What is autoboxing and unboxing?', '');
+-- INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 35, true, 'Autoboxing is the automatic conversion that JVC makes between a primitive type and its corresponding object wrapper class. Unboxing is the opposite, we convert the object wrapper class (value) back to its primitive type.');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (36, 'If you have a variable, that shall store a positive whole number between 0 and 200, what primitive type would you use to store it?', '');
+-- INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 36, true, 'In a short (it stores data between -215 and 215).');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (37, 'What is the "golden rule" of variable scoping in Java? What is the lifetime of variables?', '');
+-- INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 37, true, '"Variables declared inside a function only exist inside that function."');
+--
+-- INSERT INTO public.question (id, question, hint) VALUES (38, 'What is the purpose of the ‘equals()’ method?', '');
+-- INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 38, true, 'We can compare methods (objects) by their content type, so we can compare for example the value of the attributes of two instance.');
 
-INSERT INTO public.question (id, question, hint) VALUES (15, 'What is an interface?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 15, true, 'They are a group of related methods without body.
-	It contains what methods has the class to implement.');
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO public.question (id, question, hint) VALUES (16, 'What are access modifiers?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 16, true, 'They are specifies the scope/accessibility of a field, methods or class.
-	(Private, Default (within the package), Protected, Public)');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 1, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 1, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 1, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (17, 'Can a static method use non-static members?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 17, true, 'No, because non-static members need to be initialized before usage, and as static methods are initialized during compile time and non-static methods are initialized during runtime, static methods can''t access non-static methods or fields.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 2, false, 'It means that when a problem occures, it fails immediately.
+                  	Check system`s state at several points, so failures can be detected early.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 2, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 2, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (18, 'What is the difference between hiding a static method and overriding an instance method?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 18, true, '- Hiding a static method happens at compile time and Overriding occurs at runtime.
-	- Overriding is how Java achieve runtime-polymorphism');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 3, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 3, false, 'HashMaps are similar to the dictonaries, they are store key - value pairs.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 3, false, 'Because the main goal with HashMaps is to get value without failure, so if a key works it`s better to use the same key to get it`s value. And you should store only unique key`s.');
 
-INSERT INTO public.question (id, question, hint) VALUES (19, 'Could we access a static variable (or method) from a non-static method? Why?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 19, true, 'Yes we can, because as non-static methods not fixed in the ram, statics do, so you can access static methods and fields since they are initialized at compile time.');
 
-INSERT INTO public.question (id, question, hint) VALUES (20, 'Could we access a non-static variable (or method) from a static method? Why?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 20, true, 'No, because non-static members need to be initialized before usage, and as static methods are initialized during compile time and non-static methods are initialized during runtime, static methods can''t access non-static methods or fields.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 4, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 4, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 4, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (21, 'How many instances you have of a static variable of a given class?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 21, true, 'None, it''s just a reference pointing to the original one created at compile while instances created at runtime.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 5, false, 'It means that when a problem occures, it fails immediately.
+                  	Check system`s state at several points, so failures can be detected early.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 5, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 5, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (22, 'Why is it not a good practice to write a lot of static methods?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 22, true, 'Because that''s not to oop.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 6, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 6, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 6, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (23, 'What are the features of static attributes and static methods of a class? What are the benefits, when to use them?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 23, true, 'It''s used for constants that are the same for every instances of a class. (memory management)
-	They can be accessed from anywhere without creating an instance of the class.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 7, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 7, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 7, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (24, 'What is the ‘this’ reference?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 24, true, 'It''s a reference of the object in an instance (Class).');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 8, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 8, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 8, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (25, 'What are base class, subclass and superclass?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 25, true, '- Base Class: It`s a class from other classes are derived.
-	- Subclass: Subclass is a child class which inherits from an other class.
-	- Superclass: It`s the parent class subclasses inherits from.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 9, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 9, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 9, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (26, 'Difference between overloading and overriding?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 26, true, 'Overloading is when 2 methods have the same name but different parameters (number or type).
-	Overriding is when 2 methods have the same name and parameters, but one of the methods in the child class and the other is in the parent class.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 10, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 10, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 10, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (27, 'What are the Object Oriented Principles? Explain the concepts with realistic examples!', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 27, true, 'Encapsulation, Abstraction, Inheritance, Polymorphism');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 11, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 11, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 11, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (28, 'What is method overloading?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 28, true, 'Overloading is when 2 methods have the same name but different parameters (number or type).');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 12, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 12, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 12, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (29, 'What is method overriding?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 29, true, 'Overriding is when 2 methods have the same name and parameters, but one of the methods in the child class and the other is in the parent class.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 13, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 13, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 13, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (30, 'Explain how object oriented languages attempt to simplify memory management for Programmers.', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 30, true, 'With encapsulation we can reuse codes so we won''t have code duplications so as with inheritance.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 14, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 14, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 14, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (31, 'Explain the “Single Responsibility” principle!', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 31, true, 'Every module, class and method should have responsibility over a single part of the program`s functionality.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 15, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 15, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 15, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (32, 'What is an object oriented program? Explain, show.', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 32, true, 'An OOP program is written using the 4 pillars of the OOP.
-	Like if we want to simulate a zoo. We have the Zoo witch had numerous methods and variables, we have employees parent class wich will be inherited by subclasses, so as for animals.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 16, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 16, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 16, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (33, 'How do you make a class immutable? What do you need to watch out for?', '');
-INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 33, true, 'In Java we create immutable content with the "final" keyword.
-	- Childs cannot be created from a final class.
-	- Data members must be declared final.
-	- Construct with parameters.
-	- Getters for all the variables in it and no Setters.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 17, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 17, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 17, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (34, 'How many instances can be created for an abstract class?', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 34, true, 'None. You can only extend abstract classes implement their methods and then you can create instance from the child class.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 18, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 18, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 18, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (35, 'What is autoboxing and unboxing?', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 35, true, 'Autoboxing is the automatic conversion that JVC makes between a primitive type and its corresponding object wrapper class. Unboxing is the opposite, we convert the object wrapper class (value) back to its primitive type.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 19, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 19, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 19, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (36, 'If you have a variable, that shall store a positive whole number between 0 and 200, what primitive type would you use to store it?', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 36, true, 'In a short (it stores data between -215 and 215).');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 20, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 20, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 20, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (37, 'What is the "golden rule" of variable scoping in Java? What is the lifetime of variables?', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 37, true, '"Variables declared inside a function only exist inside that function."');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 21, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 21, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 21, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
-INSERT INTO public.question (id, question, hint) VALUES (38, 'What is the purpose of the ‘equals()’ method?', '');
-INSERT INTO public.answer (id, "question_id", right_answer, answer) VALUES (DEFAULT, 38, true, 'We can compare methods (objects) by their content type, so we can compare for example the value of the attributes of two instance.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 22, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 22, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 22, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 23, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 23, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 23, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 24, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 24, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 24, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 25, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 25, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 25, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 26, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 26, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 26, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 27, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 27, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 27, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 28, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 28, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 28, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 29, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 29, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 29, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 30, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 30, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 30, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 31, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 31, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 31, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 32, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 32, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 32, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 33, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 33, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 33, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 34, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 34, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 34, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 35, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 35, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 35, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 36, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 36, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 36, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 37, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 37, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 37, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
+
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 38, false, 'Halve the length of the linked list and get the n th (middle) throught traversing.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 38, false, 'I would make a set out of the list and then compare the set`s and the list`s length.');
+INSERT INTO public.answer (id, question_id, right_answer, answer)VALUES (DEFAULT, 38, false, 'A linked list is a collection type, where elements are stored in different pieces of the memory. Every node has the location of the next node, so this way they are linked together. The last element`s next value is null.');
 
