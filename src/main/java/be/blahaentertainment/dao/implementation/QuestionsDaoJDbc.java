@@ -43,7 +43,7 @@ public class QuestionsDaoJDbc implements QuestionsDao {
                 return null;
             }
             int id = rs.getInt(1);
-            String question = rs.getString(2);
+            String question = rs.getString(2).replaceAll("\"", " ").replaceAll("`"," ");
             String hint = rs.getString(3);
 
             return createJson(id, question,hint);
