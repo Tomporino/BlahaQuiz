@@ -57,6 +57,23 @@ body {
 /*QUIZ*/
 /*HOME*/
 
+#startBtn{
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+#startButton #startBtn :hover {
+    background-color: yellow;
+    color: red;
+}
+
+#startButton{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 50px;
+}
+
 #mainContent{
     text-align: center;
     display: grid;
