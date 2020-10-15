@@ -63,7 +63,7 @@ body {
     padding: 15px;
 }
 
-#startButton #startBtn :hover {
+#startButton #startBtn:hover {
     background-color: yellow;
     color: red;
 }

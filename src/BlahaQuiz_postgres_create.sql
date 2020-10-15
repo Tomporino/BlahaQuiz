@@ -22,5 +22,5 @@ CREATE TABLE "answer" (
 
 
 
-ALTER TABLE "answer" ADD CONSTRAINT "answer_fk0" FOREIGN KEY ("question_Id") REFERENCES "question"("id");
+ALTER TABLE "answer" ADD CONSTRAINT "answer_fk0" FOREIGN KEY (question_id) REFERENCES "question"("id");
 
