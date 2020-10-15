@@ -1,3 +1,8 @@
 be/blahaentertainment/config/TemplateEngineUtil.class
+be/blahaentertainment/dao/AnswersDao.class
+be/blahaentertainment/dao/implementation/QuestionsDaoJDbc.class
 be/blahaentertainment/controller/MainController.class
+be/blahaentertainment/dao/DatabaseManager.class
 be/blahaentertainment/config/ThymeleafConfig.class
+be/blahaentertainment/dao/QuestionsDao.class
+be/blahaentertainment/dao/implementation/AnswersDaoJDbc.class
